@@ -20,13 +20,13 @@ namespace Bonus18
             for (int i = 0; i < NumofCars; i++)
             {
                 
-                Console.Write($"Enter the Make for Car No. {i + 1} : ");
+                Console.Write($"Enter the Make for Car No. {i + 1}: ");
                 string Mmake = Console.ReadLine();
-                Console.Write("Enter the model: ");
+                Console.Write($"Enter the model for Car No. {i + 1}: ");
                 string Mmodel = Console.ReadLine();
-                Console.Write("Enter the year: ");
+                Console.Write($"Enter the year for Car No. {i + 1}: ");
                 int Year = Validate.RangeValidator(1800, 2018);
-                Console.Write("Enter the price: ");
+                Console.Write($"Enter the price for Car No. {i + 1} ");
                 double Price = Validate.RangeValidDouble(0, 4000000);
                 MyCarList.Add(new Car(Mmake, Mmodel, Year, Price));
                 Console.WriteLine();
@@ -34,8 +34,7 @@ namespace Bonus18
                 Console.WriteLine();
             }
             Console.WriteLine("------------------------");
-
-            string space = "    ";
+          
             Console.WriteLine("{0,10}{1,10}{2,11}{2,12}", "Make", "Model", "Year", "Price");
             Console.WriteLine("----------------------------------------------------------------------------");
             foreach (var item in MyCarList)
@@ -43,39 +42,6 @@ namespace Bonus18
                 Console.WriteLine("{0,10}{1,10}{2,11}{3,12}", item.Make1, item.Model1, item.Year1, item.Price1);
               
             }
-
-
-
-            //Car[] CarArray = new Car[10];
-
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    // filling the lot
-
-            //    Console.WriteLine("-------------");
-
-            //    // making new cars
-
-            //    CarArray[i] = new Car();
-
-            //    Console.WriteLine("Enter the make: ");
-            //    CarArray[i].Make1 = Console.ReadLine();
-
-            //    Console.WriteLine("Enter the model: ");
-            //    CarArray[i].Model1 = Console.ReadLine();
-
-            //    Console.WriteLine("Enter the year: ");
-            //    CarArray[i].Year1 = Convert.ToInt32(Console.ReadLine());
-
-            //    Console.WriteLine("Enter the price: ");
-            //    CarArray[i].Price1 = Convert.ToDouble(Console.ReadLine());
-
-
-            //}
-
-
-
-
 
 
         }

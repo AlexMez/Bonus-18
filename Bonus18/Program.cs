@@ -28,17 +28,20 @@ namespace Bonus18
                 int Year = Validate.RangeValidator(1800, 2018);
                 Console.Write("Enter the price: ");
                 double Price = Validate.RangeValidDouble(0, 4000000);
-
                 MyCarList.Add(new Car(Mmake, Mmodel, Year, Price));
+                Console.WriteLine();
+                Console.WriteLine("--------------------------");
+                Console.WriteLine();
             }
             Console.WriteLine("------------------------");
 
-            
+            string space = "    ";
+            Console.WriteLine("{0,10}{1,10}{2,11}{2,12}", "Make", "Model", "Year", "Price");
+            Console.WriteLine("----------------------------------------------------------------------------");
             foreach (var item in MyCarList)
             {
-                Console.WriteLine(item.Make1.ToString());
-                //Console.WriteLine("Make" );
-                //Console.Write(item.Make1 + item.Model1 + item.Year1 + item.Price1);
+                Console.WriteLine("{0,10}{1,10}{2,11}{3,12}", item.Make1, item.Model1, item.Year1, item.Price1);
+              
             }
 
 

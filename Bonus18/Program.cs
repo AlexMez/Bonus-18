@@ -12,79 +12,69 @@ namespace Bonus18
         static void Main(string[] args)
         {
 
-            Console.WriteLine("How many cars do you want to enter?");
-
-            int numberOfCars = RangeValidator(1, 100);
-
-            Car[] CarArray = new Car[numberOfCars]; // making the lot
-
+            Console.WriteLine("Welcome to the Grand Circus Motors admin console!");
+            Console.Write("How many cars are you entering: ");
+            int NumofCars = Validate.GetValidInteger();
             List<Car> MyCarList = new List<Car>();
-           
-            for (int i = 0; i < numberOfCars; i++)
-            {
-                // filling the lot
 
-                Console.WriteLine("-------------");
+            for (int i = 0; i < NumofCars; i++)
+            {
                 
-                // making new cars
+                Console.Write($"Enter the Make for Car No. {i + 1} : ");
+                string Mmake = Console.ReadLine();
+                Console.Write("Enter the model: ");
+                string Mmodel = Console.ReadLine();
+                Console.Write("Enter the year: ");
+                int Year = Validate.RangeValidator(1800, 2018);
+                Console.Write("Enter the price: ");
+                double Price = Validate.RangeValidDouble(0, 4000000);
 
-                CarArray [i] = new Car();
-                         
-                Console.WriteLine("Enter the make: ");
-                CarArray[i].Make1 = Console.ReadLine();
-
-                Console.WriteLine("Enter the model: ");
-                CarArray[i].Model1 = Console.ReadLine();
-
-                Console.WriteLine("Enter the year: ");
-                CarArray[i].Year1 = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Enter the price: ");
-                CarArray[i].Price1 = Convert.ToDouble(Console.ReadLine());
-                             
-
-            }
-
-            Console.WriteLine("-------------------");
-
-            foreach (var item in CarArray)
-            {
-                Console.WriteLine(item.Price1);
-                              
+                MyCarList.Add(new Car(Mmake, Mmodel, Year, Price));
             }
             Console.WriteLine("------------------------");
-            foreach (var item in CarArray)
+
+            
+            foreach (var item in MyCarList)
             {
-                Console.WriteLine(item.Model1);
-                
-            }
-            Console.WriteLine("---------------------------");
-            foreach (var item in CarArray)
-            {
-                Console.WriteLine(item.Make1);
-               
-            }
-            Console.WriteLine("-------------------------");
-            foreach (var item in CarArray)
-            {
-                Console.WriteLine(item.Year1);
-               
+                Console.WriteLine(item.Make1.ToString());
+                //Console.WriteLine("Make" );
+                //Console.Write(item.Make1 + item.Model1 + item.Year1 + item.Price1);
             }
 
 
-            
-           
-            
+
+            //Car[] CarArray = new Car[10];
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    // filling the lot
+
+            //    Console.WriteLine("-------------");
+
+            //    // making new cars
+
+            //    CarArray[i] = new Car();
+
+            //    Console.WriteLine("Enter the make: ");
+            //    CarArray[i].Make1 = Console.ReadLine();
+
+            //    Console.WriteLine("Enter the model: ");
+            //    CarArray[i].Model1 = Console.ReadLine();
+
+            //    Console.WriteLine("Enter the year: ");
+            //    CarArray[i].Year1 = Convert.ToInt32(Console.ReadLine());
+
+            //    Console.WriteLine("Enter the price: ");
+            //    CarArray[i].Price1 = Convert.ToDouble(Console.ReadLine());
 
 
-            Console.WriteLine("----------------");
+            //}
 
-            foreach (Car item in CarArray)
-            {
-                MyCarList.Add(item);
-            }
-            
-            
+
+
+
+
+
         }
         public static int RangeValidator(int min, int max)
 

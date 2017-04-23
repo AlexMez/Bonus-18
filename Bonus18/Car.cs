@@ -13,6 +13,11 @@ namespace Bonus18
         private int Year;
         private double Price;
 
+       //get and set       
+        #region       
+
+        private static int Objectcount = 0;
+
         public string Make1
         {
             get
@@ -65,6 +70,8 @@ namespace Bonus18
             }
         }
 
+        #endregion
+
         public Car(string MakeInput, string ModelInput, int YearInput, double PriceInput)
         {
             Make1 = MakeInput;
@@ -72,10 +79,13 @@ namespace Bonus18
             Year1 = YearInput;
             Price1 = PriceInput;
 
+            Objectcount++;
         }
 
         public Car()
         {
+
+            Objectcount++;
 
         }
 
